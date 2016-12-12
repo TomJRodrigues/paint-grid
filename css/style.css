@@ -21,5 +21,9 @@ footer {
 }
 
 #container div {
-	display: inline-block;
+	float: left;
+
+}
+
+.block {
 }
