@@ -1,18 +1,30 @@
 // Global variables
 var containerWidth = 600;
-var blockColor = 'black';
 
+// Start
 $(document).ready(function(){
 	seedContainer();
-	$('#set').click(function(){
+	$('#setColor').click(function(){
 		addBlocks();
+		$(document).off(solidBlocks());
+		trailBlocks();
 	});
-	greyBlocks();
+	$('#setSolid').click(function(){
+		addBlocks();
+		$(document).off(trailBlocks());
+		solidBlocks();
+	});
+	$('#setErase').click(function(){
+		$(document).off(solidBlocks());
+		$(document).off(trailBlocks());
+		eraseBlocks();
+	});
+	trailBlocks();
 });
 
 
 // Factored functions
-function greyBlocks() {
+function trailBlocks() {
 	$(document).on('mouseenter', '.block', function() {
 		var currentOpacity = +$(this).css('opacity');
 		if (currentOpacity < 1) {
@@ -22,44 +34,38 @@ function greyBlocks() {
 	});
 };
 
-function colorBlocks() {
-	var hue = 120;
-	var saturation = 100;
-	var lightness = 25;
+function solidBlocks() {
 	$(document).on('mouseenter', '.block', function() {
-		$(this).css('background-color', 'hsl(' + hue + ', ' + saturation + '%, ' + lightness + '%');
+		$(this).css({'opacity': 1.0});
 	});
 };
 
-// change colorblocks so that it starts on red and just increases hue to hit the rainbow and then
-// cycles back to red ad infinitum
+function eraseBlocks() {
+	$(document).on('mouseenter', '.block', function() {
+		$(this).css({'opacity': 0.0});
+	});
+};
 
 function seedContainer() {
 	for (i=0; i < 17; i++) {
 			for (k=0; k < 17; k++) {
-				$('#container').append('<div class="block">' + i + '</div');
+				$('#container').append('<div class="block"></div');
 			}
 		}
 		$('#container div').css({'width': containerWidth/17, 'height': containerWidth/17, 
-														 'background-color': blockColor, 'opacity': 0.0});
+														 'background-color': 'black', 'opacity': 0.0});
 };
 
 function addBlocks() {
 	var blocksPerSide = $('input[name=blocksPerSide]').val();
+	var blockColor = $('input[name=blockColor]').val();
 		$('#container').empty();
 		for (i=0; i < blocksPerSide; i++) {
 			for (k=0; k < blocksPerSide; k++) {
-				$('#container').append('<div class="block">' + i + '</div');
+				$('#container').append('<div class="block"></div');
 			}
 		}
 		$('#container div').css({'width': containerWidth/blocksPerSide, 
 														 'height': containerWidth/blocksPerSide,
 														 'background-color': blockColor, 'opacity': 0.0});
 };
-
-
-// TODO
-// Set option for trail-effect vs paint-effect
-// Set options for greyscale vs colorscale
-// Add erase function
-// Add increasing grey->black in 10 hovers support

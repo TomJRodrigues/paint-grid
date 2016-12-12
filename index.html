@@ -11,11 +11,14 @@
 	</header>
 		<form name="userInput">
 			Number of blocks per side (1-64):<input type="text" value="17" name="blocksPerSide">
-			<button type="button" id="set">Change density</button>
 			<br>
-			<button type="button">Color</button>
-			<button type="button">Black and White</button>
-			<button type="button">Erase</button>
+			<br>
+			Color (Hex input only, ex: "#000000":<input type="text" value="#000000" name="blockColor" size="20">
+			<button type="button" id="setColor">Reset Grid to Shading</button>
+			<br>
+			<button type="button" id="setSolid">Back to Solid Color</button>
+			<br>
+			<button type="button" id="setErase">Erase Mode</button>
 		</form>
 </head>
 <body>
