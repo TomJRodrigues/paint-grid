@@ -9,23 +9,27 @@
 	<header>
 		<h1>Paint Grid</h1>
 	</header>
-		<form name="userInput">
-			Number of blocks per side (1-64):<input type="text" value="17" name="blocksPerSide">
-			<br>
-			<br>
-			Color (Hex input only, ex: "#000000":<input type="text" value="#000000" name="blockColor" size="20">
-			<button type="button" id="setColor">Reset Grid to Shading</button>
-			<br>
-			<button type="button" id="setSolid">Back to Solid Color</button>
-			<br>
-			<button type="button" id="setErase">Erase Mode</button>
-		</form>
 </head>
 <body>
+	<div id="navbarcontainer">
+		<form id="navbar" name="userInput">
+			Blocks per Side (1-64):<input type="text" value="17" name="blocksPerSide" size="3">
+			<button type="button" id="setNumber">Set Block Size</button>
+			<br>
+			<br>
+			Hex Color:<input type="text" value="#000000" name="blockColor" size="10">
+			<button type="button" id="setColor">Set Color</button>
+			<br>
+			<button type="button" id="setSolid">Change Brush to Solid Color</button>
+			<br>
+			<button type="button" id="setErase">Eraser</button>
+			<h4>Made by Tom Rodrigues</h4>
+			<h5>tomjrodrigues@gmail.com</h5>
+		</form>
+	</div>
 	<div id="container">
 	</div>
 </body>
 <footer>
-<h5>Made by Tom Rodrigues: tomjrodrigues@gmail.com</h5>
 </footer>
 </html>

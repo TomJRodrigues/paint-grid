@@ -1,9 +1,34 @@
-html {
+html, button {
 	font-family: arial;
+	color: #333333;
 }
 
 header h1 {
 	padding-left: 40%;
+}
+
+body {
+	background-color: #88B04B;
+}
+
+#navbarcontainer{
+	float: left;
+	display: flex;
+	margin-left: 8%;
+}
+
+#navbar {
+	text-align: right;
+}
+
+#setSolid {
+	margin-top: 12px;
+}
+
+#setErase {
+	margin-top: 6px;
+	margin-bottom: 6px;
+	margin-right: 4px;
 }
 
 #container {
@@ -12,18 +37,10 @@ header h1 {
 	border-style: solid;
 	border-width: 2px;
 	border-color: black;
-	display: block;
-	margin-left: 25%;
-}
-
-footer {
-	margin-left: 40%;
+	background-color: white;
+	margin-left: 37%;
 }
 
 #container div {
 	float: left;
-
-}
-
-.block {
 }

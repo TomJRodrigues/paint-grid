@@ -4,6 +4,11 @@ var containerWidth = 600;
 // Start
 $(document).ready(function(){
 	seedContainer();
+	$('#setNumber').click(function(){
+		addBlocks();
+		$(document).off(solidBlocks());
+		trailBlocks();
+	});
 	$('#setColor').click(function(){
 		addBlocks();
 		$(document).off(solidBlocks());
